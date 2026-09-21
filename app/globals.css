@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/*
+  Design tokens for the meter reading app.
+  Grounded in the subject matter rather than a generic SaaS palette:
+  water and electricity have their own long-standing signage colors
+  (blue / amber), used here as the two accent colors against a calm,
+  ledger-like neutral base — this is a records tool, not a marketing page.
+*/
+:root {
+  --paper: #f5f6f4;
+  --surface: #ffffff;
+  --ink: #1c2321;
+  --ink-soft: #5b625e;
+  --line: #dadedb;
+
+  --water: #1d6e8c;
+  --water-soft: #e4f0f4;
+
+  --electric: #a6631a;
+  --electric-soft: #f6ebdc;
+
+  --good: #2e7d4f;
+  --good-soft: #e6f3ea;
+
+  --bad: #b23a3a;
+  --bad-soft: #fbeaea;
+
+  --warn: #c17817;
+  --warn-soft: #f8ecd9;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-water: var(--water);
+  --color-water-soft: var(--water-soft);
+  --color-electric: var(--electric);
+  --color-electric-soft: var(--electric-soft);
+  --color-good: var(--good);
+  --color-good-soft: var(--good-soft);
+  --color-bad: var(--bad);
+  --color-bad-soft: var(--bad-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "Roboto Mono", monospace;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+/* Plain number inputs instead of the default browser spinner arrows —
+   the up/down carets don't add anything for a value someone is reading
+   off a meter and typing once. */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  appearance: textfield;
+}

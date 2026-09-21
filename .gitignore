@@ -1,0 +1,45 @@
+# Dependency directories
+node_modules/
+# Why: Dependencies can be reinstalled via package.json/package-lock.json. Committing them wastes massive amounts of space.
+
+# Next.js build output
+.next/
+out/
+# Why: These are auto-generated build files. They should be generated locally or by a CI/CD server, not tracked in source control.
+
+# Environment variables
+.env
+.env*.local
+# Why: These files contain sensitive secrets, API keys, and database passwords. They must NEVER be committed.
+
+# SQLite Databases
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+# Why: Local databases contain raw development data and change constantly. They cause massive merge conflicts and shouldn't be tracked.
+
+# Local Uploads/Assets
+/data/*
+!/data/.gitkeep
+/data/photos/*
+!/data/photos/.gitkeep
+# Why: Ignores actual uploaded photos or files while keeping the folder structure intact via .gitkeep.
+
+# OS generated files
+.DS_Store
+Thumbs.db
+# Why: System-specific metadata files that clutter the repository.
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+# Why: Personal IDE configurations shouldn't be forced on others (or your future self on a different machine).
+
+# Private notes
+project_notes_PRIVATE.md
+# Why: Keeps your sensitive planning documents out of the repository.
